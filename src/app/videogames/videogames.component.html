@@ -1,0 +1,57 @@
+<body>
+  <main>
+    <h1>Formulario Videojuegos: </h1>
+    <hr>
+    <nav>
+      <button (click)="insertar()" [disabled]="insertarDeshabilitado">Insertar</button>
+      <button (click)="modificar()" [disabled]="modificarDeshabilitado">Modificar</button>
+      <button (click)="borrar()" [disabled]="borrarDeshabilitado">Borrar</button>
+      <button (click)="vaciar()">Vaciar</button>
+      <button (click)="desHabilitarBotones()">Cambiar opciones</button>
+    </nav>
+    <br>
+    <h2>Rellene los campos: </h2>
+    <div id="formulario">
+
+      <label for="id">ID:</label><br>
+      <input id="id" type="number" [(ngModel)]="id" [disabled]="idDeshabilitada"><br>
+      <span class="rojo" [hidden]="errorIDOculto">La ID debe ser existente</span><br>
+
+      <label for="titulo">Titulo:</label><br>
+      <input id="titulo" [(ngModel)]="titulo" [disabled]="camposDeshabilitado"><br>
+      <span class="rojo" [hidden]="tituloObligatorioOculto">El Titulo es obligatorio</span><br>
+
+      <label for="compania">Compañia:</label><br>
+      <input id="compania" type="text" [(ngModel)]="compania" [disabled]="camposDeshabilitado"><br>
+      <span class="rojo" [hidden]="companiaObligatorioOculto">La Compañia es obligatorio</span><br>
+
+      <label for="valoracionMedia">Valoración Media:</label><br>
+      <input id="valoracionMedia" type="number" [(ngModel)]="valoracionMedia" [disabled]="camposDeshabilitado"><br>
+      <span class="rojo" [hidden]="valoracionMediaObligatorioOculto">La Valoración debe ser entre 0 y 10</span>
+    </div>
+    <br>
+    <table id="tabla">
+      <thead>
+        <tr>
+          <th class="celda">ID</th>
+          <th class="celda">Titulo</th>
+          <th class="celda">Compañia</th>
+          <th class="celda">Valoración Media</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let v of arrayVideojuegos">
+          <td class="celda">{{ v.id }}</td>
+          <td class="celda">{{ v.titulo }}</td>
+          <td class="celda">{{ v.compania }}</td>
+          <td class="celda">{{ v.valoracionMedia }}</td>
+        </tr>
+        <tr *ngIf="arrayVideojuegos.length==0">
+          <td class="rojo" colspan="4">
+            No se han encontrado videojuegos
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+</body>

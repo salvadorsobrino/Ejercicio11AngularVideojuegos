@@ -1,0 +1,77 @@
+.rojo{
+    color: red;
+}
+h1,h2{
+    text-align: center;
+}
+nav{
+    text-align: center;
+}
+#formulario{
+    width: 50%;
+    border-style: solid;
+    border-color: orange;
+    border-width: thin;
+    margin-left: 25%;
+    padding: 1%;
+
+}
+#tabla{
+    width: 50%;
+    margin-left: 25%;
+    border-style: solid;
+    border-color: orange;
+    border-width: thin;
+}
+.celda{
+    border-style: solid;
+    border-color: orange;
+    border-width: thin;
+    text-align: center;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+
+    font-family: 'Times New Roman';
+    color: rgb(0, 0, 0);
+    
+}
+main{
+    width: 50%;
+    background-color: rgb(255, 255, 128);
+    border-style: solid;
+    border-color: rgb(255, 166, 0);
+    border-width: thin;
+    margin-left: 25%;
+    padding: 3%;
+}
+@media screen and (max-width: 1000px) {
+    body{
+        width: 90vw;
+    }
+    main{
+        width: 100%;
+        margin-left: 0%;
+        background-color: rgb(253, 164, 91);
+    }
+    #formulario{
+        width: 100%;
+        margin-left: 0%;
+        border-color: white;
+    }
+    #tabla{
+        width: 100%;
+        margin-left: 0%;
+        border-color: white;
+    }
+    .celda{
+        border-color: white;
+    }
+}
+@media screen and (max-width: 700px) {
+    main{
+        background-color: rgb(253, 178, 173);
+        border-color: rgb(255, 72, 0);
+    }
+}
